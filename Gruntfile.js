@@ -21,27 +21,6 @@ module.exports = function (grunt) {
 				src: 'css/*.css'
 			},
 		},
-		concat: {
-			js: {
-				// the files to concatenate
-				src: [
-					'bower_components/jquery/dist/jquery.js',
-					// 'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js',
-
-					'js/vendor/*.js',
-					'js/simonschwaer.js'
-				],
-				// the location of the resulting JS file
-				dest: 'js/<%= pkg.name %>.min.js'
-			},
-			/*css: {
-				src: [
-					'css/main.css',
-				],
-				dest: 'css/main.css'
-			}*/
-
-		},
 		uglify: {
 			options: {
 				mangle: false,
@@ -53,20 +32,20 @@ module.exports = function (grunt) {
 			build: {
 				files: {
 					'js/<%= pkg.name %>.min.js': [
-					'bower_components/jquery/dist/jquery.js',
-					// 'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js',
+						'bower_components/jquery/dist/jquery.js',
+						// 'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js',
 
-					'js/vendor/*.js',
-					'js/plouffe.js'
-					],
-					'js/modernizr.min.js': ['bower_components/modernizr/modernizr.js']
+						'js/vendor/*.js',
+						'js/components/*.js',
+						'js/main.js'
+					]
 				}
 			}
 		},
 		jshint: {
 			files: [
 				'Gruntfile.js',
-				'js/simonschwaer.js'
+				'js/main.js'
 			],
 			options: {
 				// options here to override JSHint defaults
@@ -87,7 +66,7 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: ['<%= jshint.files %>'],
-				tasks: ['jshint', 'concat:js'],
+				tasks: ['jshint', 'uglify'],
 				options: {
 					livereload: true
 				}
@@ -109,5 +88,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.registerTask('default', ['compass', 'autoprefixer', 'jshint', 'concat:css', 'uglify']);
+	grunt.registerTask('default', ['compass', 'autoprefixer', 'jshint', 'uglify']);
 };
