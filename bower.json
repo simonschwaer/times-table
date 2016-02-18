@@ -1,0 +1,21 @@
+{
+  "name": "simonschwaer",
+  "version": "1.0.2",
+  "authors": [
+    "Simon Schwär <mail@simon-schwaer.de>"
+  ],
+  "description": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "jquery": "~2.1.3",
+    "modernizr": "~2.8.3"
+  }
+}

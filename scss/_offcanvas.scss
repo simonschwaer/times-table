@@ -1,0 +1,122 @@
+html,
+body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+.row-offcanvas {
+	position: relative;
+	transition: all .25s ease-out;
+}
+
+.row-offcanvas-right {
+	right: 0;
+}
+
+.row-offcanvas-left {
+	left: 0;
+}
+
+.row-offcanvas-right
+.sidebar-offcanvas {
+	right: -25%;
+}
+
+.row-offcanvas-left
+.sidebar-offcanvas {
+	left: -25%;
+}
+
+.row-offcanvas-right.active {
+	right: 25%;
+}
+
+.row-offcanvas-left.active {
+	left: 25%;
+}
+
+.sidebar-offcanvas {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 25%;
+	background: #222 url('../images/sidebar_background.png') repeat-y top left;
+	padding: 0 2em;
+	overflow: scroll;
+	max-width: 500px;
+}
+
+@media (max-width: 960px) {
+	.row-offcanvas-right
+	.sidebar-offcanvas {
+		right: -40%;
+	}
+
+	.row-offcanvas-left
+	.sidebar-offcanvas {
+		left: -40%;
+	}
+
+	.row-offcanvas-right.active {
+		right: 40%;
+	}
+
+	.row-offcanvas-left.active {
+		left: 40%;
+	}
+
+	.sidebar-offcanvas {
+		width: 40%;
+	}
+}
+
+@media (max-width: $screen-sm) {
+	.row-offcanvas-right
+	.sidebar-offcanvas {
+		right: -50%;
+	}
+
+	.row-offcanvas-left
+	.sidebar-offcanvas {
+		left: -50%;
+	}
+
+	.row-offcanvas-right.active {
+		right: 50%;
+	}
+
+	.row-offcanvas-left.active {
+		left: 50%;
+	}
+
+	.sidebar-offcanvas {
+		width: 50%;
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.row-offcanvas-right
+	.sidebar-offcanvas {
+		right: -80%;
+	}
+
+	.row-offcanvas-left
+	.sidebar-offcanvas {
+		left: -80%;
+	}
+
+	.row-offcanvas-right.active {
+		right: 80%;
+	}
+
+	.row-offcanvas-left.active {
+		left: 80%;
+	}
+
+	.sidebar-offcanvas {
+		width: 80%;
+	}
+}
